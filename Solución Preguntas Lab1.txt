@@ -1,0 +1,68 @@
+Universidad de Antioquia
+
+Departamento de Ing. de Sistemas
+
+Computación móvil
+
+Lab1 ­ Interfaz gráfica
+
+-------------------------------------------------------------------------------------------------
+
+2) a) En la página 101 que hacen las siguientes líneas que se resaltan:
+
+--android:layout_height="wrap_content"
+--android:layout_height="match_parent"
+--android:hint="@string/hint_status"
+
+-------------------------------------------------------------------------------------------------
+
+3) a) Teniendo en cuenta las definiciones que usted acaba de agregar al archivo
+string.xml cuáles de las siguientes formas de usar una definición del archivo
+string son incorrectas y justifique:
+
+­android:text="string/Tweet" />
+
+­android:text="@button_tweet/string" />
+
+­android:hint="@string/hint_status"
+
+-------------------------------------------------------------------------------------------------
+
+4) Diríjase al archivo .java donde esta el código de su actividad y busque el método
+onCreate
+
+a) Por que tiene este en la línea anterior la sentencia @Override y cual es su función.
+
+b) cuál es la función del método setContentView
+
+-------------------------------------------------------------------------------------------------
+
+5) a) cuál es la función del método findViewById(), explique con sus palabras.
+
+b) Qué ocurre si remueve en la línea editStatus = (EditText)findViewById(R.id.editStatus);
+ la parte que dice (EditText), compile el programa y anote lo que ocurre.
+ 
+------------------------------------------------------------------------------------------------- 
+ 
+7) a) Busque la definición de logging ​y defínala con sus palabras.
+
+b) Que es LogCat.
+
+c) mencione al menos 3 tipos de Log y para qué sirven, por ejemplo log.d(TAG,
+
+message) para mostrar mensajes a nivel de debug​.
+
+-------------------------------------------------------------------------------------------------
+
+8) Siga los pasos del libro guía y responda las siguientes preguntas:
+
+a) Explique la diferencia entre un hilo simple o single­thread y un multithread
+
+b) Explique qué es una tarea asíncrona, como crearla y que hace el método
+doInBackground() 
+
+c) Que hace el método onPostExecute() en su código.
+ 
+ 
+
+
