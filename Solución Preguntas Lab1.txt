@@ -21,9 +21,7 @@ string.xml cuáles de las siguientes formas de usar una definición del archivo
 string son incorrectas y justifique:
 
 ­android:text="string/Tweet" />
-
 ­android:text="@button_tweet/string" />
-
 ­android:hint="@string/hint_status"
 
 -------------------------------------------------------------------------------------------------
