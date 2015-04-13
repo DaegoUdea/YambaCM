@@ -8,11 +8,22 @@ Lab1 ­ Interfaz gráfica
 
 -------------------------------------------------------------------------------------------------
 
-2) a) En la página 101 que hacen las siguientes líneas que se resaltan:
+2)
+a)
+- android:layout_height="wrap_content": Define el tamaño vertical de la vista que se establece deacuerdo a su contenido.
+- android:layout_height="match_parent": Define el tamaño vertical de la vista que se establece deacuerdo
+a la vista que lo contiene.
+- android:hint="@String/hint_status": Define el texto de ayuda que aparece dentro de una vista con una
+definicion en el archivo String.XML bajo el nombre de la variable hint_status.
+- android:inputType="textMultiLine": Define el tipo de la vista editText la cual sera de entradas en multi linea.
 
---android:layout_height="wrap_content"
---android:layout_height="match_parent"
---android:hint="@string/hint_status"
+b. Con sus palabras, explique la diferencia entre wrap_content y match_parent
+-wrap_content establece el tamaño de una vista en funcion del contenido que esta tiene mientras que
+match_parent establece el tamaño en funcion del espacio disponible que posee el contenedor de la vista actual.
+
+c. Cuales la funcion del id.
+-La funcion de id es la de dar un nombre a un objeto de la vista con el fin de obtener su referencia
+en memoria para modificar su comportamiento y atributos.
 
 -------------------------------------------------------------------------------------------------
 
@@ -20,9 +31,11 @@ Lab1 ­ Interfaz gráfica
 string.xml cuáles de las siguientes formas de usar una definición del archivo
 string son incorrectas y justifique:
 
-­android:text="string/Tweet" />
-­android:text="@button_tweet/string" />
-­android:hint="@string/hint_status"
+- android:text="string/Tweet"/> es incorrecta ya que el valor "string/Tweet" no está precedido de un @ por lo cual reconoce el valor entero como una cadena que será el valor del atributo text.
+
+- android:text="@button_tweet/string" es tambien incorrecto ya que la sintaxis es erronea, el valor que acompaña al simbolo "@" debe ser nombre del archivo donde se encapsulan las definiciones.
+
+- android:text="@string/hint_status" es la opcion correcta, ya que cumple la sintaxis en donde "@string" es el nombre del archivo donde se encuentra la definicion de "hint_status".
 
 -------------------------------------------------------------------------------------------------
 
@@ -30,37 +43,53 @@ string son incorrectas y justifique:
 onCreate
 
 a) Por que tiene este en la línea anterior la sentencia @Override y cual es su función.
+La sentencia @Override se debe a que estamos heredando los atributos y funcionalidades de un Activity,
+por lo tanto debemos de usar el metodo onCreate() para dar funcionalidad a las ventanas que deseamos crear.
 
 b) cuál es la función del método setContentView
+setContentView() crea los objetos de las vistas definidas en un archivo XML con sus respectivos atributos.
+
 
 -------------------------------------------------------------------------------------------------
 
-5) a) cuál es la función del método findViewById(), explique con sus palabras.
+5) 
+a) cuál es la función del método findViewById(), explique con sus palabras.
+El metodo findViewById() obtiene la referencia del objeto en memoria de un objeto de la vista el cual tiene asociado un id.
 
 b) Qué ocurre si remueve en la línea editStatus = (EditText)findViewById(R.id.editStatus);
  la parte que dice (EditText), compile el programa y anote lo que ocurre.
+Cuando se remueve el casting de EditText el compilador marca un error que dice que la vista no puede ser convertida en un EditText.
  
 ------------------------------------------------------------------------------------------------- 
  
-7) a) Busque la definición de logging ​y defínala con sus palabras.
+7) 
+a) Busque la definición de logging ​y defínala con sus palabras.
+El logging es un mecanismo el cual sirve para identificar errores en una aplicacion o obtener una vista de un paso a paso de como está operando.
 
 b) Que es LogCat.
+LogCat es el mecanismo que permitre filtrar y mostrar los datos obtenidos por medio del logging.
 
 c) mencione al menos 3 tipos de Log y para qué sirven, por ejemplo log.d(TAG,
-
 message) para mostrar mensajes a nivel de debug​.
+- log.d(Tag,Message) Se usa para ofrecer informacion de debug general.
+- log.e(Tag,Message) se usa para resaltar mensajes de error.
+- log.w(Tag,Message) se usa para resaltar advertencias.
+- log.i(Tag,Message) se usa para resaltar informacion.
 
 -------------------------------------------------------------------------------------------------
 
 8) Siga los pasos del libro guía y responda las siguientes preguntas:
 
 a) Explique la diferencia entre un hilo simple o single­thread y un multithread
+Un single.thread es una secuencia de instrucciones las cuales se ejecutan una detras de la otra de forma sincrona, por otro lado un multithread permite la ejecucion de varias instrucciones de forma independiente una de la otra lo cual permite ejecutar multiples secuencias de instrucciones de forma asincrona.
 
 b) Explique qué es una tarea asíncrona, como crearla y que hace el método
-doInBackground() 
+doInBackground()
+- Una tarea asincrona como se dijo anteriormente es la que permite la ejecucion de varias secuencias simultaneamente ya que la correcta ejecucion de una no dependerá de la otra, para crearla se debe implementar la clase AsyncTask de android y tambien implementar sus correspondientes metodos doInBackGround(), onProgressUpdate() y onPostExecute().
+- El metodo doInBackground() ejecuta todo el codigo que se desea ejecutar en un hilo asincrono.
 
 c) Que hace el método onPostExecute() en su código.
- 
+El metodo onPostExecute() despliega una ventana emergente en la actividad con un mensaje el cual depende del resultado obtenido en el metodo doInBackGround().
  
 
 
