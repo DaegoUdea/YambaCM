@@ -1408,7 +1408,7 @@ containing a value of this type.
         public static final int abc_search_dropdown_item_icons_2line=0x7f040013;
         public static final int abc_search_view=0x7f040014;
         public static final int abc_simple_dropdown_hint=0x7f040015;
-        public static final int activity_status=0x7f040016;
+        public static final int fragment_status=0x7f040016;
         public static final int support_simple_spinner_dropdown_item=0x7f040017;
     }
     public static final class menu {
@@ -1437,8 +1437,9 @@ containing a value of this type.
         public static final int action_settings=0x7f0b0010;
         public static final int app_name=0x7f0b0011;
         public static final int button_tweet=0x7f0b0012;
-        public static final int hello_world=0x7f0b0013;
-        public static final int hint_status=0x7f0b0014;
+        public static final int hello_blank_fragment=0x7f0b0013;
+        public static final int hello_world=0x7f0b0014;
+        public static final int hint_status=0x7f0b0015;
     }
     public static final class style {
         public static final int Animation_AppCompat_DropDownUp=0x7f0c0000;

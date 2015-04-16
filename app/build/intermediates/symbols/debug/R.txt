@@ -436,7 +436,7 @@ int layout abc_screen_toolbar 0x7f040012
 int layout abc_search_dropdown_item_icons_2line 0x7f040013
 int layout abc_search_view 0x7f040014
 int layout abc_simple_dropdown_hint 0x7f040015
-int layout activity_status 0x7f040016
+int layout fragment_status 0x7f040016
 int layout support_simple_spinner_dropdown_item 0x7f040017
 int menu menu_status 0x7f0d0000
 int mipmap ic_launcher 0x7f030000
@@ -459,8 +459,9 @@ int string abc_toolbar_collapse_description 0x7f0b000f
 int string action_settings 0x7f0b0010
 int string app_name 0x7f0b0011
 int string button_tweet 0x7f0b0012
-int string hello_world 0x7f0b0013
-int string hint_status 0x7f0b0014
+int string hello_blank_fragment 0x7f0b0013
+int string hello_world 0x7f0b0014
+int string hint_status 0x7f0b0015
 int style Animation_AppCompat_DropDownUp 0x7f0c0000
 int style AppTheme 0x7f0c0001
 int style Base_Animation_AppCompat_DropDownUp 0x7f0c0002
