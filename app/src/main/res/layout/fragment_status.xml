@@ -15,7 +15,7 @@
         android:layout_alignRight="@+id/editStatus"
         android:layout_alignEnd="@+id/editStatus"
         android:enabled="false"
-        android:textColor="#000"
+        android:textColor="#A9A9A9"
         android:background="#FFF"/>
 
     <EditText
@@ -37,7 +37,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceSmall"
-        android:text="140"
         android:id="@+id/textCount"
         android:layout_alignTop="@+id/buttonTweet"
         android:layout_alignLeft="@+id/editStatus"

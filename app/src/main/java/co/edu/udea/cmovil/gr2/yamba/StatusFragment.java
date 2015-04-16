@@ -1,5 +1,6 @@
 package co.edu.udea.cmovil.gr2.yamba;
 
+import android.content.Context;
 import android.graphics.Color;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -11,6 +12,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -26,6 +28,7 @@ public class StatusFragment extends Fragment implements OnClickListener {
     private EditText editStatus;
     private TextView textCount;
     private int defaultTextColor;
+    private final int maxChars=20;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -34,6 +37,7 @@ public class StatusFragment extends Fragment implements OnClickListener {
         buttonTweet = (Button) view.findViewById(R.id.buttonTweet);
         editStatus = (EditText) view.findViewById(R.id.editStatus);
         textCount = (TextView) view.findViewById(R.id.textCount);
+        textCount.setText(Integer.toString(maxChars));
         defaultTextColor = textCount.getTextColors().getDefaultColor();
 
         buttonTweet.setOnClickListener(this);
@@ -50,9 +54,26 @@ public class StatusFragment extends Fragment implements OnClickListener {
 
             @Override
             public void afterTextChanged(Editable s) {
-                int count = 140 - editStatus.length();
+
+
+                int count = maxChars - editStatus.length();
                 textCount.setText(Integer.toString(count));
-                if (count>10 && count<140){
+
+                switch ( count ){
+                    case maxChars:
+                        buttonTweet.setEnabled(false);
+                        buttonTweet.setTextColor(Color.argb(255,169,169,169));
+                        break;
+                    case -1:
+                        //asdasdasdasdas
+                        break;
+
+                    default:
+                        buttonTweet.setEnabled(true);
+                        buttonTweet.setTextColor(Color.BLACK);
+                }
+
+                if (count>10 && count<maxChars){
                     textCount.setTextColor(Color.GREEN);
                 }
                 else if(count<=10 && count >0){
@@ -64,6 +85,7 @@ public class StatusFragment extends Fragment implements OnClickListener {
                 else{
                     textCount.setTextColor(defaultTextColor);
                 }
+
             }
         });
         return view;
@@ -75,6 +97,11 @@ public class StatusFragment extends Fragment implements OnClickListener {
         Log.d(TAG, "nClicked with Status: " + status);
 
         new PostTask().execute(status);
+        InputMethodManager imm = (InputMethodManager) getView().getContext().getSystemService(
+                Context.INPUT_METHOD_SERVICE);
+        imm.hideSoftInputFromWindow(editStatus.getWindowToken(), 0);
+        editStatus.setText("");
+
     }
 
     private final class PostTask extends AsyncTask<String, Void, String> {
