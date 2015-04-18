@@ -1,5 +1,7 @@
 package co.edu.udea.cmovil.gr2.yamba;
 
+import android.app.FragmentManager;
+import android.app.FragmentTransaction;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -14,12 +16,19 @@ public class StatusActivity extends ActionBarActivity {
 
        if(savedInstanceState == null){
            StatusFragment fragment = new StatusFragment();
-           getFragmentManager()
+
+           FragmentManager fragmentManager = getFragmentManager();
+           FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+           fragmentTransaction.add(android.R.id.content,fragment,fragment.getClass().getSimpleName());
+           fragmentTransaction.commit();
+
+      /*     getFragmentManager()
                    .beginTransaction()
                    .add(android.R.id.content,fragment,fragment.getClass().getSimpleName())
                    .commit();
+      */
        }
-    }
+   }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
