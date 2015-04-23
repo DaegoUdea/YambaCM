@@ -30,7 +30,7 @@ public class MainActivity extends ActionBarActivity {
                 startActivity(new Intent(this, SettingsActivity.class)); //
                 return true; //
             case R.id.action_tweet:
-                startActivity(new Intent("co.edu.udea.cmovil.gr2.yamba.action.tweet"));
+                startActivity(new Intent("co.edu.udea.cmovil.gr2.yamba.StatusActivity"));
                 return true;
             default:
                 return false;

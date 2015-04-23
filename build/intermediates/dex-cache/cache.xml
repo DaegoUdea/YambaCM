@@ -2,39 +2,39 @@
 <items version="2" >
 
     <item
-        jar="C:\Librerias\Android Studio\SDK\extras\android\m2repository\com\android\support\support-annotations\22.0.0\support-annotations-22.0.0.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="685d0b2c590447e85284ed84712cb363ba04eff8">
-        <dex dex="C:\Proyectos programacion\Android Studio\yambacm\app\build\intermediates\pre-dexed\debug\support-annotations-22.0.0-fae4030734d97c23347b0b63b4d3a4fd130ab2e8.jar" />
-    </item>
-    <item
-        jar="C:\Proyectos programacion\Android Studio\yambacm\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.0.0\libs\internal_impl-22.0.0.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="b5b92f469d515a13d778900f6d50c03d12f35504">
-        <dex dex="C:\Proyectos programacion\Android Studio\yambacm\app\build\intermediates\pre-dexed\debug\internal_impl-22.0.0-e157c1182bcf3236e31478cdfad21f159199672f.jar" />
-    </item>
-    <item
-        jar="C:\Proyectos programacion\Android Studio\yambacm\app\libs\yambaclientlib.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="564ffd3f1dc6779da46f36e4cb78854ee45e6a1b">
-        <dex dex="C:\Proyectos programacion\Android Studio\yambacm\app\build\intermediates\pre-dexed\debug\yambaclientlib-a1106210165ec4e1fb40210b155a8ffd8d6d0a73.jar" />
-    </item>
-    <item
-        jar="C:\Proyectos programacion\Android Studio\yambacm\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.0.0\classes.jar"
+        jar="/root/AndroidStudioProjects/YambaCM/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.0.0/classes.jar"
         jumboMode="false"
         revision="21.1.2"
         sha1="4e86306289ace4aa0cfec44a05ed2b410d36989d">
-        <dex dex="C:\Proyectos programacion\Android Studio\yambacm\app\build\intermediates\pre-dexed\debug\classes-21eef2bdcdbfbd0e5b728d97cb1cd945c29db9c0.jar" />
+        <dex dex="/root/AndroidStudioProjects/YambaCM/app/build/intermediates/pre-dexed/debug/classes-3021a64767379d430ee4e8fe29d8620ce318f884.jar" />
     </item>
     <item
-        jar="C:\Proyectos programacion\Android Studio\yambacm\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\22.0.0\classes.jar"
+        jar="/root/AndroidStudioProjects/YambaCM/app/libs/yambaclientlib.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="564ffd3f1dc6779da46f36e4cb78854ee45e6a1b">
+        <dex dex="/root/AndroidStudioProjects/YambaCM/app/build/intermediates/pre-dexed/debug/yambaclientlib-e3bb88417cade3f45ec544440028277445fcf4ab.jar" />
+    </item>
+    <item
+        jar="/root/AndroidStudioProjects/YambaCM/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.0.0/classes.jar"
         jumboMode="false"
         revision="21.1.2"
         sha1="d84409890828e07d344a3b9b1da545dba9897b51">
-        <dex dex="C:\Proyectos programacion\Android Studio\yambacm\app\build\intermediates\pre-dexed\debug\classes-b93180463d26243598fb40f86b86dc17a462cb64.jar" />
+        <dex dex="/root/AndroidStudioProjects/YambaCM/app/build/intermediates/pre-dexed/debug/classes-dab383f950f8c2c47b98bcdd1a39b36f8fd9dffc.jar" />
+    </item>
+    <item
+        jar="/root/AndroidStudioProjects/YambaCM/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.0.0/libs/internal_impl-22.0.0.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="b5b92f469d515a13d778900f6d50c03d12f35504">
+        <dex dex="/root/AndroidStudioProjects/YambaCM/app/build/intermediates/pre-dexed/debug/internal_impl-22.0.0-66f6a68c557aeee19341edc0ca699ec0d25bfff8.jar" />
+    </item>
+    <item
+        jar="/root/Android/Sdk/extras/android/m2repository/com/android/support/support-annotations/22.0.0/support-annotations-22.0.0.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="685d0b2c590447e85284ed84712cb363ba04eff8">
+        <dex dex="/root/AndroidStudioProjects/YambaCM/app/build/intermediates/pre-dexed/debug/support-annotations-22.0.0-5c3eb70b57859c75c7a27e70cee70709b060b059.jar" />
     </item>
 
 </items>
