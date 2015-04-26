@@ -1417,7 +1417,6 @@ containing a value of this type.
     }
     public static final class menu {
         public static final int menu_main=0x7f0e0000;
-        public static final int menu_status=0x7f0e0001;
     }
     public static final class mipmap {
         public static final int ic_launcher=0x7f030000;
@@ -1442,13 +1441,13 @@ containing a value of this type.
         public static final int action_settings=0x7f0c0010;
         public static final int app_name=0x7f0c0011;
         public static final int button_tweet=0x7f0c0012;
-        public static final int hello_blank_fragment=0x7f0c0013;
-        public static final int hello_world=0x7f0c0014;
-        public static final int hint_status=0x7f0c0015;
-        public static final int password=0x7f0c0016;
-        public static final int password_summary=0x7f0c0017;
-        public static final int purge=0x7f0c0018;
-        public static final int refresh=0x7f0c0019;
+        public static final int hello_world=0x7f0c0013;
+        public static final int hint_status=0x7f0c0014;
+        public static final int password=0x7f0c0015;
+        public static final int password_summary=0x7f0c0016;
+        public static final int purge=0x7f0c0017;
+        public static final int refresh=0x7f0c0018;
+        public static final int title_activity_Status=0x7f0c0019;
         public static final int title_activity_main=0x7f0c001a;
         public static final int title_activity_settings=0x7f0c001b;
         public static final int tweet=0x7f0c001c;

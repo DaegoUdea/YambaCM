@@ -2,11 +2,15 @@ package co.edu.udea.cmovil.gr2.yamba;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.app.Fragment;
+import android.preference.PreferenceManager;
 import android.text.Editable;
+import android.text.TextUtils;
 import android.text.TextWatcher;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -46,18 +50,14 @@ public class StatusFragment extends Fragment implements OnClickListener {
         editStatus.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
             }
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-
             }
 
             @Override
             public void afterTextChanged(Editable s) {
-
-
                 int count = maxChars - editStatus.length();
                 textCount.setText(Integer.toString(count));
 
@@ -152,14 +152,22 @@ public class StatusFragment extends Fragment implements OnClickListener {
                 Context.INPUT_METHOD_SERVICE);
         imm.hideSoftInputFromWindow(editStatus.getWindowToken(), 0);
         editStatus.setText("");
-
     }
 
     private final class PostTask extends AsyncTask<String, Void, String> {
 
         @Override
         protected String doInBackground(String... params) {
-            YambaClient yambaCloud = new YambaClient("student","password");
+
+            SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(getActivity());
+            String username = prefs.getString("username","");
+            String password = prefs.getString("password","");
+
+            if(TextUtils.isEmpty(username)||TextUtils.isEmpty(password)){
+                getActivity().startActivity(new Intent(getActivity(),SettingsActivity.class));
+                return "Please update your username and password";
+            }
+            YambaClient yambaCloud = new YambaClient(username,password);
             try{
                 yambaCloud.postStatus(params[0]);
                 return "Success on posting";
@@ -176,4 +184,7 @@ public class StatusFragment extends Fragment implements OnClickListener {
             Toast.makeText(StatusFragment.this.getActivity(), result, Toast.LENGTH_LONG).show();
         }
     }
+
+
+
 }

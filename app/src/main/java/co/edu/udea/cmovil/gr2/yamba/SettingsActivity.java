@@ -12,17 +12,14 @@ public class SettingsActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         if (savedInstanceState == null) {
-            // Create a fragment
-            SettingsFragment fragment = new SettingsFragment(); //
+            SettingsFragment fragment = new SettingsFragment();
             getFragmentManager()
                     .beginTransaction()
                     .add(android.R.id.content, fragment,
                             fragment.getClass().getSimpleName())
-                    .commit(); //
-
+                    .commit();
         }
     }
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

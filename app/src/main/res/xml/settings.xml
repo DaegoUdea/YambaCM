@@ -7,5 +7,6 @@
     <EditTextPreference
         android:inputType="textPassword"
         android:title="@string/password"
-        android:key="password" android:summary="@string/password_summary"/>
+        android:key="password"
+        android:summary="@string/password_summary"/>
 </PreferenceScreen>
