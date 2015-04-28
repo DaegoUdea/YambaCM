@@ -32,6 +32,9 @@ public class MainActivity extends ActionBarActivity {
             case R.id.action_tweet:
                 startActivity(new Intent("co.edu.udea.cmovil.gr2.yamba.StatusActivity"));
                 return true;
+            case R.id.action_refresh:
+                startService(new Intent(this, RefreshService.class));
+                return true;
             default:
                 return false;
         }

@@ -44,6 +44,9 @@ public class StatusActivity extends ActionBarActivity {
             case R.id.action_settings:
                 startActivity(new Intent(this, SettingsActivity.class)); //
                 return true; //
+            case R.id.action_refresh:
+                startService(new Intent(this, RefreshService.class));
+                return true;
             default:
                 return false;
         }
