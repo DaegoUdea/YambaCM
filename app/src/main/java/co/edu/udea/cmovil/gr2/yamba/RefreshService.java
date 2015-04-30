@@ -7,7 +7,7 @@ import android.preference.PreferenceManager;
 import android.text.TextUtils;
 import android.util.Log;
 import android.widget.Toast;
-
+import com.marakana.android.yamba.clientlib.YambaClient.Status;
 import com.marakana.android.yamba.clientlib.YambaClient;
 import com.marakana.android.yamba.clientlib.YambaClientException;
 
@@ -61,11 +61,12 @@ public class RefreshService extends IntentService {
         }
         Log.d(TAG, "onStarted");
 
-        YambaClient yambaCloud = new YambaClient("student","password");
+        YambaClient Cloud = new YambaClient(username,password);
         try{
-            Vector<YambaClient.Status> timeLine = (Vector)yambaCloud.getTimeline(5);
-            for (YambaClient.Status status : timeLine){
-                Log.d(TAG, String.format("%s : %s", status.getUser(),status.getMessage()));
+            List<Status> timeLine = Cloud.getTimeline(20);
+            for (Status status : timeLine){
+                System.out.println("For");
+                Log.d(TAG, String.format("%s: %s", status.getUser(),status.getMessage()));
             }
         }
         catch (YambaClientException e){
