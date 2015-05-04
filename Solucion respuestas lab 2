@@ -1,0 +1,11 @@
+Funcionalidad de onHandleIntent
+-Todo el codigo que esté escrito en este metodo será ejecuado en un 
+hilo diferente y cuando este termine el servicio se detendra.
+
+Diferencia entre IntentService y Service
+-El service no se ejecuta en un hilo diferente y se llama mediante el metodo onStartCommand().
+-El IntentService se ejecuta en un nuevo hilo y se ejecuta mediante el metodo onHandledIntent().
+
+
+Cuando se llama el metodo onDestroy?
+-Se llama cuando termina la ejecucion del service.
