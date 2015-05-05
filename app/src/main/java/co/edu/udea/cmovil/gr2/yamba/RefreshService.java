@@ -1,8 +1,11 @@
 package co.edu.udea.cmovil.gr2.yamba;
 
 import android.app.IntentService;
+import android.content.ContentValues;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.database.sqlite.SQLiteDatabase;
+import android.net.Uri;
 import android.preference.PreferenceManager;
 import android.text.TextUtils;
 import android.util.Log;
@@ -61,12 +64,26 @@ public class RefreshService extends IntentService {
         }
         Log.d(TAG, "onStarted");
 
+        ContentValues values = new ContentValues();
+        DbHelper dbHelper = new DbHelper(this); //
+        SQLiteDatabase db = dbHelper.getWritableDatabase(); //
         YambaClient Cloud = new YambaClient(username,password);
         try{
+            int count = 0;
             List<Status> timeLine = Cloud.getTimeline(20);
-            for (Status status : timeLine){
-                System.out.println("For");
-                Log.d(TAG, String.format("%s: %s", status.getUser(),status.getMessage()));
+            for (Status status : timeLine) {
+
+                values.clear();
+                values.put(StatusContract.Column.ID, status.getId());
+                values.put(StatusContract.Column.USER, status.getUser());
+                values.put(StatusContract.Column.MESSAGE,status.getMessage());
+                values.put(StatusContract.Column.CREATED_AT, status.getCreatedAt().getTime());
+
+                db.insertWithOnConflict(StatusContract.TABLE, null, values,SQLiteDatabase.CONFLICT_IGNORE);
+            }
+            if (count > 0) {
+                sendBroadcast(new Intent("com.marakana.android.yamba.action.NEW_STATUSES").
+                        putExtra("count", count));
             }
         }
         catch (YambaClientException e){
