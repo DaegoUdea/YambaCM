@@ -41,6 +41,17 @@
             android:name=".RefreshService"
             android:exported="false" >
         </service>
+
+        <provider
+            android:name=".StatusProvider"
+            android:authorities="co.edu.udea.cmovil.gr2.yamba.StatusProvider"
+            android:exported="false" />
+
+        <activity
+            android:name=".DetailsActivity"
+            android:label="@string/title_activity_details" >
+        </activity>
+        
     </application>
 
 </manifest>

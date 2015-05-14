@@ -1325,14 +1325,14 @@ containing a value of this type.
         public static final int action_mode_bar=0x7f0a002e;
         public static final int action_mode_bar_stub=0x7f0a002d;
         public static final int action_mode_close_button=0x7f0a0020;
-        public static final int action_purge=0x7f0a0045;
-        public static final int action_refresh=0x7f0a0044;
-        public static final int action_settings=0x7f0a0042;
-        public static final int action_tweet=0x7f0a0043;
+        public static final int action_purge=0x7f0a004b;
+        public static final int action_refresh=0x7f0a004a;
+        public static final int action_settings=0x7f0a0048;
+        public static final int action_tweet=0x7f0a0049;
         public static final int activity_chooser_view_content=0x7f0a0021;
         public static final int always=0x7f0a0016;
         public static final int beginning=0x7f0a0013;
-        public static final int buttonTweet=0x7f0a003f;
+        public static final int buttonTweet=0x7f0a0041;
         public static final int checkbox=0x7f0a0029;
         public static final int collapseActionView=0x7f0a0017;
         public static final int decor_content_parent=0x7f0a002f;
@@ -1340,11 +1340,13 @@ containing a value of this type.
         public static final int dialog=0x7f0a001b;
         public static final int disableHome=0x7f0a000c;
         public static final int dropdown=0x7f0a001c;
-        public static final int editStatus=0x7f0a0040;
+        public static final int editStatus=0x7f0a0042;
         public static final int edit_query=0x7f0a0033;
         public static final int end=0x7f0a0014;
         public static final int expand_activities_button=0x7f0a0022;
         public static final int expanded_menu=0x7f0a0028;
+        public static final int fragment_details=0x7f0a0040;
+        public static final int fragment_timeline=0x7f0a003f;
         public static final int home=0x7f0a0004;
         public static final int homeAsUp=0x7f0a000d;
         public static final int icon=0x7f0a0026;
@@ -1352,6 +1354,10 @@ containing a value of this type.
         public static final int image=0x7f0a0023;
         public static final int listMode=0x7f0a0009;
         public static final int list_item=0x7f0a0025;
+        public static final int list_item_content=0x7f0a0044;
+        public static final int list_item_text_created_at=0x7f0a0046;
+        public static final int list_item_text_message=0x7f0a0047;
+        public static final int list_item_text_user=0x7f0a0045;
         public static final int middle=0x7f0a0015;
         public static final int never=0x7f0a0019;
         public static final int none=0x7f0a000e;
@@ -1376,7 +1382,7 @@ containing a value of this type.
         public static final int split_action_bar=0x7f0a0007;
         public static final int submit_area=0x7f0a003c;
         public static final int tabMode=0x7f0a000b;
-        public static final int textCount=0x7f0a0041;
+        public static final int textCount=0x7f0a0043;
         public static final int title=0x7f0a0027;
         public static final int up=0x7f0a0008;
         public static final int useLogo=0x7f0a0012;
@@ -1411,12 +1417,15 @@ containing a value of this type.
         public static final int abc_search_dropdown_item_icons_2line=0x7f040013;
         public static final int abc_search_view=0x7f040014;
         public static final int abc_simple_dropdown_hint=0x7f040015;
-        public static final int activity_main=0x7f040016;
-        public static final int fragment_status=0x7f040017;
-        public static final int support_simple_spinner_dropdown_item=0x7f040018;
+        public static final int activity_details=0x7f040016;
+        public static final int activity_main=0x7f040017;
+        public static final int fragment_status=0x7f040018;
+        public static final int list_item=0x7f040019;
+        public static final int support_simple_spinner_dropdown_item=0x7f04001a;
     }
     public static final class menu {
-        public static final int menu_main=0x7f0e0000;
+        public static final int menu_details=0x7f0e0000;
+        public static final int menu_main=0x7f0e0001;
     }
     public static final class mipmap {
         public static final int ic_launcher=0x7f030000;
@@ -1441,18 +1450,20 @@ containing a value of this type.
         public static final int action_settings=0x7f0c0010;
         public static final int app_name=0x7f0c0011;
         public static final int button_tweet=0x7f0c0012;
-        public static final int hello_world=0x7f0c0013;
-        public static final int hint_status=0x7f0c0014;
-        public static final int password=0x7f0c0015;
-        public static final int password_summary=0x7f0c0016;
-        public static final int purge=0x7f0c0017;
-        public static final int refresh=0x7f0c0018;
-        public static final int title_activity_Status=0x7f0c0019;
-        public static final int title_activity_main=0x7f0c001a;
-        public static final int title_activity_settings=0x7f0c001b;
-        public static final int tweet=0x7f0c001c;
-        public static final int username=0x7f0c001d;
-        public static final int username_summary=0x7f0c001e;
+        public static final int hello_blank_fragment=0x7f0c0013;
+        public static final int hello_world=0x7f0c0014;
+        public static final int hint_status=0x7f0c0015;
+        public static final int password=0x7f0c0016;
+        public static final int password_summary=0x7f0c0017;
+        public static final int purge=0x7f0c0018;
+        public static final int refresh=0x7f0c0019;
+        public static final int title_activity_Status=0x7f0c001a;
+        public static final int title_activity_details=0x7f0c001b;
+        public static final int title_activity_main=0x7f0c001c;
+        public static final int title_activity_settings=0x7f0c001d;
+        public static final int tweet=0x7f0c001e;
+        public static final int username=0x7f0c001f;
+        public static final int username_summary=0x7f0c0020;
     }
     public static final class style {
         public static final int Animation_AppCompat_DropDownUp=0x7f0d0000;
