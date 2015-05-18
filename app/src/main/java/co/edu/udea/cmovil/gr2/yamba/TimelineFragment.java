@@ -34,14 +34,14 @@ public class TimelineFragment extends ListFragment implements
             R.id.list_item_text_message, R.id.list_item_text_created_at }; //
     private static final int LOADER_ID = 42;
     private SimpleCursorAdapter mAdapter; //
-
-
+    private TimelineViewBinder VIEW_BINDER = new TimelineViewBinder();
 
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         mAdapter = new SimpleCursorAdapter(getActivity(), R.layout.list_item,
                 null, FROM, TO, 0); //
+       mAdapter.setViewBinder(VIEW_BINDER);
         setListAdapter(mAdapter); //
        getLoaderManager().initLoader(LOADER_ID, null, this);
 
