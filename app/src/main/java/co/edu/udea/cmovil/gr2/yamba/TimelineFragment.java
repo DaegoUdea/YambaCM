@@ -18,7 +18,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
 import android.widget.SimpleCursorAdapter;
-import android.widget.SimpleCursorTreeAdapter;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -79,7 +78,7 @@ public class TimelineFragment extends ListFragment implements
     }
 
     /** Handles custom binding of data to view. */
-    class TimelineViewBinder implements SimpleCursorTreeAdapter.ViewBinder { //
+    class TimelineViewBinder implements SimpleCursorAdapter.ViewBinder { //
         @Override
         public boolean setViewValue(View view, Cursor cursor,
                                     int columnIndex) { //
