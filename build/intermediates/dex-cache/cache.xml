@@ -2,39 +2,39 @@
 <items version="2" >
 
     <item
-        jar="/root/AndroidStudioProjects/YambaCM/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.0.0/classes.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="4e86306289ace4aa0cfec44a05ed2b410d36989d">
-        <dex dex="/root/AndroidStudioProjects/YambaCM/app/build/intermediates/pre-dexed/debug/classes-3021a64767379d430ee4e8fe29d8620ce318f884.jar" />
-    </item>
-    <item
-        jar="/root/AndroidStudioProjects/YambaCM/app/libs/yambaclientlib.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="564ffd3f1dc6779da46f36e4cb78854ee45e6a1b">
-        <dex dex="/root/AndroidStudioProjects/YambaCM/app/build/intermediates/pre-dexed/debug/yambaclientlib-e3bb88417cade3f45ec544440028277445fcf4ab.jar" />
-    </item>
-    <item
-        jar="/root/AndroidStudioProjects/YambaCM/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.0.0/classes.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="d84409890828e07d344a3b9b1da545dba9897b51">
-        <dex dex="/root/AndroidStudioProjects/YambaCM/app/build/intermediates/pre-dexed/debug/classes-dab383f950f8c2c47b98bcdd1a39b36f8fd9dffc.jar" />
-    </item>
-    <item
-        jar="/root/AndroidStudioProjects/YambaCM/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.0.0/libs/internal_impl-22.0.0.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="b5b92f469d515a13d778900f6d50c03d12f35504">
-        <dex dex="/root/AndroidStudioProjects/YambaCM/app/build/intermediates/pre-dexed/debug/internal_impl-22.0.0-66f6a68c557aeee19341edc0ca699ec0d25bfff8.jar" />
-    </item>
-    <item
-        jar="/root/Android/Sdk/extras/android/m2repository/com/android/support/support-annotations/22.0.0/support-annotations-22.0.0.jar"
+        jar="C:\Librerias\Android Studio\SDK\extras\android\m2repository\com\android\support\support-annotations\22.0.0\support-annotations-22.0.0.jar"
         jumboMode="false"
         revision="21.1.2"
         sha1="685d0b2c590447e85284ed84712cb363ba04eff8">
-        <dex dex="/root/AndroidStudioProjects/YambaCM/app/build/intermediates/pre-dexed/debug/support-annotations-22.0.0-5c3eb70b57859c75c7a27e70cee70709b060b059.jar" />
+        <dex dex="C:\Proyectos programacion\Android Studio\YambaCM\app\build\intermediates\pre-dexed\debug\support-annotations-22.0.0-fae4030734d97c23347b0b63b4d3a4fd130ab2e8.jar" />
+    </item>
+    <item
+        jar="C:\Proyectos programacion\Android Studio\YambaCM\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.0.0\libs\internal_impl-22.0.0.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="b5b92f469d515a13d778900f6d50c03d12f35504">
+        <dex dex="C:\Proyectos programacion\Android Studio\YambaCM\app\build\intermediates\pre-dexed\debug\internal_impl-22.0.0-cecffe4faf6bce4e17e10ccadbc1ff1e3d667777.jar" />
+    </item>
+    <item
+        jar="C:\Proyectos programacion\Android Studio\YambaCM\app\libs\yambaclientlib.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="564ffd3f1dc6779da46f36e4cb78854ee45e6a1b">
+        <dex dex="C:\Proyectos programacion\Android Studio\YambaCM\app\build\intermediates\pre-dexed\debug\yambaclientlib-f525c97b82b0788c5aee57e27c77455e831d6237.jar" />
+    </item>
+    <item
+        jar="C:\Proyectos programacion\Android Studio\YambaCM\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.0.0\classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="4e86306289ace4aa0cfec44a05ed2b410d36989d">
+        <dex dex="C:\Proyectos programacion\Android Studio\YambaCM\app\build\intermediates\pre-dexed\debug\classes-1f066d98c05941e3c8f7f4455537a2258b329b81.jar" />
+    </item>
+    <item
+        jar="C:\Proyectos programacion\Android Studio\YambaCM\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\22.0.0\classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="d84409890828e07d344a3b9b1da545dba9897b51">
+        <dex dex="C:\Proyectos programacion\Android Studio\YambaCM\app\build\intermediates\pre-dexed\debug\classes-c43d8f9df661043e9ff20fb62124515f6462b157.jar" />
     </item>
 
 </items>

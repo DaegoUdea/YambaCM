@@ -10,6 +10,7 @@ import android.preference.PreferenceManager;
 import android.text.TextUtils;
 import android.util.Log;
 import android.widget.Toast;
+
 import com.marakana.android.yamba.clientlib.YambaClient.Status;
 import com.marakana.android.yamba.clientlib.YambaClient;
 import com.marakana.android.yamba.clientlib.YambaClientException;
@@ -17,58 +18,29 @@ import com.marakana.android.yamba.clientlib.YambaClientException;
 import java.util.List;
 import java.util.Vector;
 
-
-/**
- * An {@link IntentService} subclass for handling asynchronous task requests in
- * a service on a separate handler thread.
- * <p/>
- * TODO: Customize class - update intent actions and extra parameters.
- */
 public class RefreshService extends IntentService {
-    // TODO: Rename actions, choose action names that describe tasks that this
-    // IntentService can perform, e.g. ACTION_FETCH_NEW_ITEMS
-    public static final String ACTION_FOO = "co.edu.udea.cmovil.gr2.yamba.action.FOO";
-    public static final String ACTION_BAZ = "co.edu.udea.cmovil.gr2.yamba.action.BAZ";
-    public static final String TAG ="refreshService";
-
-    // TODO: Rename parameters
-    public static final String EXTRA_PARAM1 = "co.edu.udea.cmovil.gr2.yamba.extra.PARAM1";
-    public static final String EXTRA_PARAM2 = "co.edu.udea.cmovil.gr2.yamba.extra.PARAM2";
-
+    public static final String TAG = "refreshService";
     public RefreshService() {
         super("RefreshService");
     }
 
     @Override
     protected void onHandleIntent(Intent intent) {
-        if (intent != null) {
-            final String action = intent.getAction();
-            if (ACTION_FOO.equals(action)) {
-                final String param1 = intent.getStringExtra(EXTRA_PARAM1);
-                final String param2 = intent.getStringExtra(EXTRA_PARAM2);
-                handleActionFoo(param1, param2);
-            } else if (ACTION_BAZ.equals(action)) {
-                final String param1 = intent.getStringExtra(EXTRA_PARAM1);
-                final String param2 = intent.getStringExtra(EXTRA_PARAM2);
-                handleActionBaz(param1, param2);
-            }
-        }
-
+        Log.d(TAG, "onStarted");
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
-        String username = prefs.getString("username","");
-        String password = prefs.getString("password","");
+        String username = prefs.getString("username", "");
+        String password = prefs.getString("password", "");
 
-        if(TextUtils.isEmpty(username)||TextUtils.isEmpty(password)){
-            Toast.makeText(this, "Please update your username and password",Toast.LENGTH_LONG).show();
+        if (TextUtils.isEmpty(username) || TextUtils.isEmpty(password)) {
+            Log.e(TAG, "Please update your username and password");
             return;
         }
-        Log.d(TAG, "onStarted");
 
         ContentValues values = new ContentValues();
-        DbHelper dbHelper = new DbHelper(this); //
-        SQLiteDatabase db = dbHelper.getWritableDatabase(); //
-        YambaClient Cloud = new YambaClient(username,password);
-        try{
+        DbHelper dbHelper = new DbHelper(this);
+        SQLiteDatabase db = dbHelper.getWritableDatabase();
+        YambaClient Cloud = new YambaClient(username, password);
+        try {
             int count = 0;
             List<Status> timeLine = Cloud.getTimeline(20);
             for (Status status : timeLine) {
@@ -76,51 +48,35 @@ public class RefreshService extends IntentService {
                 values.clear();
                 values.put(StatusContract.Column.ID, status.getId());
                 values.put(StatusContract.Column.USER, status.getUser());
-                values.put(StatusContract.Column.MESSAGE,status.getMessage());
+                values.put(StatusContract.Column.MESSAGE, status.getMessage());
                 values.put(StatusContract.Column.CREATED_AT, status.getCreatedAt().getTime());
 
-                db.insertWithOnConflict(StatusContract.TABLE, null, values,SQLiteDatabase.CONFLICT_IGNORE);
+                Uri uri = getContentResolver().insert(StatusContract.CONTENT_URI, values);
+                if (uri != null) {
+                    count++;
+                    Log.d(TAG, String.format("%s: %s", status.getUser(), status.getMessage()));
+                    db.insertWithOnConflict(StatusContract.TABLE, null, values, SQLiteDatabase.CONFLICT_IGNORE);
+                }
             }
+
             if (count > 0) {
-                sendBroadcast(new Intent("com.marakana.android.yamba.action.NEW_STATUSES").
-                        putExtra("count", count));
+                sendBroadcast(new Intent("co.edu.udea.cmovil.gr2.yamba.action.NEW_STATUSES").putExtra("count", count));
             }
-        }
-        catch (YambaClientException e){
+        } catch (YambaClientException e) {
             Log.e(TAG, "Failed to fetch the timeline");
-            e.printStackTrace();            
+            e.printStackTrace();
         }
         return;
     }
 
-
-
-    /**
-     * Handle action Foo in the provided background thread with the provided
-     * parameters.
-     */
-    private void handleActionFoo(String param1, String param2) {
-        // TODO: Handle action Foo
-        throw new UnsupportedOperationException("Not yet implemented");
-    }
-
-    /**
-     * Handle action Baz in the provided background thread with the provided
-     * parameters.
-     */
-    private void handleActionBaz(String param1, String param2) {
-        // TODO: Handle action Baz
-        throw new UnsupportedOperationException("Not yet implemented");
-    }
-
     @Override
-    public void onCreate(){
+    public void onCreate() {
         super.onCreate();
         Log.d(TAG, "onCreated");
     }
-    
+
     @Override
-    public  void onDestroy(){
+    public void onDestroy() {
         super.onDestroy();
         Log.d(TAG, "onDestroy");
     }
